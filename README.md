@@ -1,6 +1,11 @@
 # 匿名聊天
 在线实时匹配，两人异性聊天室。为移动端设计。
 
+案例地址：[http://chat.pingx.tech/](http://chat.pingx.tech/)  
+后台管理地址：[http://chat.pingx.tech/login.php](http://http://chat.pingx.tech/login.php)  
+登录账号：admin  
+登录密码：admin  
+
 # 特性
 1. 免注册
 2. 随机房间时间
