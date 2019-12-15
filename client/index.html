@@ -1,0 +1,200 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="扩列神器！在规定的时间内，假装对方是你的情侣，开始匿名聊天吧！">
+    <meta name="keywords" content="情侣">
+    <meta name="aplus-terminal" content="1">
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no, address=no">
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <title>假装情侣匿名聊天室</title>
+    <link rel="stylesheet" href="assets/css/amazeui.min.css">
+<!--    <link rel="stylesheet" href="assets/css/app.css">-->
+    <link href="https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css?date=1215">
+</head>
+<body style="padding-top: 0">
+<main>
+
+    <div id="start">
+        <!--开始匹配-->
+        <div class="am-panel am-panel-default Absolute-Center" style="background: rgba(255, 255, 255, 0.46);border: none;text-align:center;position: fixed; height: 100%">
+            <div class="am-panel-bd pulse animated">
+                <p id="room-num-p">已成功匹配 <span id="room-num"></span> 对情侣</p>
+                <h1 class="title" style="display: none">假装情侣</h1>
+                <img src="images/title.png" class="title-img" alt="假装情侣">
+                <p class="hint" style=" color: chocolate; width: 75%; text-align: center; display: block; margin: 0 auto; ">扩列神器！<br>在规定的时间内，假装对方是你的情侣，开始匿名聊天吧！</p>
+                <div class="select-gender">
+                    <a class="am-btn am-btn-default am-round" id="select-gender-boy" onclick="switch_gender('boy')" href="#">
+                        <i class="am-icon-mars"></i>
+                        我是男生
+                    </a>
+                    <a class="am-btn am-btn-default am-round" id="select-gender-girl" onclick="switch_gender('girl')" href="#">
+                        <i class="am-icon-venus"></i>
+                        我是女生
+                    </a>
+                </div>
+                <button type="button" class="am-btn am-btn-secondary am-radius pulse animated" onclick="start_chat()" style="animation-iteration-count:infinite;">开始匹配</button>
+
+            </div>
+        </div>
+
+        <!--页脚信息-->
+        <div class="footer" style="padding: 8px">
+            <p><a href="help.html">查看帮助</a> </p>
+            <p>把房间ID保存下来找管理员获取聊天记录哦</p>
+        </div>
+    </div>
+    <div id="chat" style="display: none; padding-top: 49px;">
+        <header data-am-widget="header"
+                class="am-header am-header-default am-header-fixed">
+            <div class="am-header-left am-header-nav">
+                <a href="#" class="leave-room" onclick="leave_room()">
+                    分手
+                </a>
+            </div>
+
+            <h1 class="am-header-title">
+                <a href="javascript: void(0)">
+                    正在聊天
+                </a>
+            </h1>
+
+            <div class="am-header-right am-header-nav">
+                <a href="javascript: void(0)" class="timer pulse animated" style="animation-iteration-count: infinite;">
+                    <span class="time-left"></span>秒
+                </a>
+            </div>
+        </header>
+        <!--聊天界面-->
+        <div class="mobile-page">
+            <div class="am-alert am-alert-warning" data-am-alert>
+                <button type="button" class="am-close">&times;</button>
+                <p id="topic"></p>
+            </div>
+
+            <span class="time" id="room-id"></span>
+
+            <div id="msg-box">
+
+            </div>
+        </div>
+
+        <!--聊天框-->
+        <div class="chat-input-div" style="z-index: 999;">
+            <div class="tool-bar">
+                <ul class="tool-bar-ul" style="padding: 0">
+                    <li>
+                        <form enctype="multipart/form-data">
+                            <label for="upload_photo"></label>
+                            <input name="file" type="file" id="upload_photo" style="width: 1px;height: 1px;overflow: hidden;position: absolute" accept="image/*" />
+                        </form>
+                    </li>
+                    <li>
+                        <img src="images/heart.png" alt="心" onclick="show_heart();send_heart();">
+                    </li>
+                    <li>
+                        <img src="images/add_time.png" alt="增加时间" data-am-popover="{content: '延长时间'}" id="add_time" onclick="add_time()" style="display: none;">
+                    </li>
+                </ul>
+
+
+            </div>
+            <div class="am-input-group">
+                <input type="text" class="am-form-field" id="msg">
+                <span class="am-input-group-btn">
+                    <button class="am-btn am-btn-secondary" type="button" id="send-btn" onclick="send_msg()">发送</button>
+                  </span>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+<div class="am-modal am-modal-alert" tabindex="-1" id="looking-alert">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">匹配中<span id="total_matching" style="font-size: 12px;"></span></div>
+        <div class="am-modal-bd">
+            <img src="images/heart.svg" style="display: block;margin: 0 auto;" alt="载入中..." id="loading" width="40"> 正在寻找另一半...
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn" onclick="cancel_looking()">取消匹配</span>
+        </div>
+    </div>
+</div>
+
+<!--聊天内容的模板, 自己-->
+
+<script id="chat-msg-me" type="text/html">
+    <div class="user-group slideInRight animated">
+        <div class="user-msg">
+            <span class="user-reply">{{msg}}</span>
+            <i class="triangle-user "></i>
+        </div>
+        <img class="user-img" src="{{headshot}}"/>
+    </div>
+</script>
+
+<!--聊天内容的模板， TA-->
+
+<script id="chat-msg-TA" type="text/html">
+    <div class="admin-group slideInLeft animated">
+     <img class="admin-img" src="{{headshot}}"/>
+        <div class="admin-msg">
+            <i class="triangle-admin"></i>
+            <span class="admin-reply">{{msg}}</span>
+        </div>
+    </div>
+</script>
+
+<!--离开房间-->
+<script id="chat-msg-leave" type="text/html">
+    <div class="am-alert am-alert-danger" data-am-alert>
+        对方已跟你分手
+        <br>
+    </div>
+</script>
+
+<!--时间结束-->
+<script id="chat-msg-timeout" type="text/html">
+    <div class="am-alert am-alert-danger" data-am-alert>
+        时间用完啦！请重新匹配
+        <br>
+    </div>
+</script>
+
+<div style="display: none;">
+    <script src="https://s22.cnzz.com/z_stat.php?id=1273289122&web_id=1273289122" language="JavaScript"></script>
+</div>
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="jquery-3.2.1.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="assets/js/amazeui.min.js"></script>
+
+<script src="layer_mobile/layer.js"></script>
+
+<script src="template-web.js"></script>
+
+<script src="xback.js"></script>
+
+
+<script type="text/javascript">
+    document.write('<script type="text/javascript" src="client.js?'+Math.random()+'"></scr'+'ipt>');
+</script>
+</body>
+</html>

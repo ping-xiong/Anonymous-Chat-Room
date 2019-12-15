@@ -1,0 +1,55 @@
+/* Write your styles */
+
+#room-list-ul{
+    padding: 0;
+}
+
+#room-list-ul li{
+    list-style: none;
+    border-bottom: 1px solid #eee;
+}
+
+#room-list-ul li img{
+    height: 40px;
+    width: 40px;
+}
+
+.id{
+    display: flex;
+    justify-content: center;
+    padding: 4px;
+    align-items: center;
+}
+
+.li-div{
+    display: flex
+}
+
+.li-div-div{
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    flex: 1;
+}
+
+.room-id{
+    font-weight: bold;
+    color: #03A9F4;
+}
+
+.room-time{
+    font-size: 12px;
+    color: #9E9E9E;
+    text-align: right;
+}
+
+.room-limit{
+    margin-right: 10px;
+}
+
+.open-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: blue;
+}
