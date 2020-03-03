@@ -2,7 +2,7 @@
 在线实时匹配，两人异性聊天室。为移动端设计。
 
 案例地址：[http://chat.pingx.tech/](http://chat.pingx.tech/)  
-后台管理地址：[http://chat.pingx.tech/login.php](http://http://chat.pingx.tech/login.php)  
+后台管理地址：[http://chat.pingx.tech/login.php](http://chat.pingx.tech/login.php)  
 登录账号：admin  
 登录密码：admin  
 
