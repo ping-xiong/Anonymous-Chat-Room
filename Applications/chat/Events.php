@@ -24,8 +24,11 @@ use Workerman\Lib\Timer;
 
 // 引入数据库类
 require_once 'Connection.php';
-
+// 配置信息
 require_once 'config.php';
+// 文本过滤
+require_once __DIR__ . '/../php_keyword_shielding-master/shildDirtyWords.php';
+
 /**
  * 主逻辑
  * 主要是处理 onConnect onMessage onClose 三个方法
@@ -191,9 +194,14 @@ class Events
                 }else{
                     $room_id = $_SESSION['room'];
 
+                    if (config::getConfig('fitter_words')){
+                        // 过滤敏感词
+                        $msg = shildDirtyWords::findAndHideKeyWords($msg);
+                    }
+
                     $msg = array(
                         'type'=>'msg',
-                        'msg'=>$msg
+                        'msg'=> $msg
                     );
 
                     Gateway::sendToGroup($room_id, json_encode($msg), array($client_id));

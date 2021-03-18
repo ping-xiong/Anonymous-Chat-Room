@@ -28,7 +28,10 @@ class config
         'min_time' => 180, // 最低180秒
 
         // 是否在匹配的时候现在当前正在匹配的人数
-        'show_matching' => true
+        'show_matching' => true,
+
+        // 是否开启敏感文本过滤，去除脏话，敏感词，插件地址：https://github.com/ilovehuahua/php_keyword_shielding
+        'fitter_words' => true
     ];
 
     /**

@@ -34,3 +34,63 @@
 2018-03-29 16:12:59 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
 2018-03-29 16:12:59 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
 2018-03-29 16:13:00 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2021-03-18 15:21:05 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required '../php_keyword_shielding-master/shildDirtyWords.php' (include_path='.;C:\php\pear') in G:\gitee\Anonymous-Chat-Room\Applications\chat\Events.php on line 30"
+2021-03-18 15:21:06 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required '../php_keyword_shielding-master/shildDirtyWords.php' (include_path='.;C:\php\pear') in G:\gitee\Anonymous-Chat-Room\Applications\chat\Events.php on line 30"
+2021-03-18 15:21:07 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required '../php_keyword_shielding-master/shildDirtyWords.php' (include_path='.;C:\php\pear') in G:\gitee\Anonymous-Chat-Room\Applications\chat\Events.php on line 30"
+2021-03-18 15:21:08 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required '../php_keyword_shielding-master/shildDirtyWords.php' (include_path='.;C:\php\pear') in G:\gitee\Anonymous-Chat-Room\Applications\chat\Events.php on line 30"
+2021-03-18 15:21:16 pid:1 Register auth timeout (127.0.0.1). See http://doc2.workerman.net/register-auth-timeout.html
+2021-03-18 15:21:17 pid:1 Register auth timeout (127.0.0.1). See http://doc2.workerman.net/register-auth-timeout.html
+2021-03-18 15:21:18 pid:1 Register auth timeout (127.0.0.1). See http://doc2.workerman.net/register-auth-timeout.html
+2021-03-18 15:21:19 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required '../php_keyword_shielding-master/shildDirtyWords.php' (include_path='.;C:\php\pear') in G:\gitee\Anonymous-Chat-Room\Applications\chat\Events.php on line 30"
+2021-03-18 15:22:26 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required 'G:\gitee\Anonymous-Chat-Room\Applications\chat../php_keyword_shielding-master/shildDirtyWords.php' (include_path='.;C:\php\pear') in G:\gitee\Anonymous-Chat-Room\Applications\chat\Events.php on line 30"
+2021-03-18 15:22:27 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required 'G:\gitee\Anonymous-Chat-Room\Applications\chat../php_keyword_shielding-master/shildDirtyWords.php' (include_path='.;C:\php\pear') in G:\gitee\Anonymous-Chat-Room\Applications\chat\Events.php on line 30"
+2021-03-18 15:22:36 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required 'G:\gitee\Anonymous-Chat-Room\Applications\chat../php_keyword_shielding-master/shildDirtyWords.php' (include_path='.;C:\php\pear') in G:\gitee\Anonymous-Chat-Room\Applications\chat\Events.php on line 30"
+2021-03-18 15:22:36 pid:1 Register auth timeout (127.0.0.1). See http://doc2.workerman.net/register-auth-timeout.html
+2021-03-18 15:22:58 pid:1 PDOException: SQLSTATE[HY000] [2002] 由于目标计算机积极拒绝，无法连接。
+ in G:\gitee\Anonymous-Chat-Room\Applications\chat\Connection.php:1711
+Stack trace:
+#0 G:\gitee\Anonymous-Chat-Room\Applications\chat\Connection.php(1711): PDO->__construct()
+#1 G:\gitee\Anonymous-Chat-Room\Applications\chat\Connection.php(1698): Workerman\MySQL\Connection->connect()
+#2 G:\gitee\Anonymous-Chat-Room\Applications\chat\Events.php(47): Workerman\MySQL\Connection->__construct()
+#3 [internal function]: Events::onWorkerStart()
+#4 G:\gitee\Anonymous-Chat-Room\vendor\workerman\gateway-worker\src\BusinessWorker.php(223): call_user_func()
+#5 G:\gitee\Anonymous-Chat-Room\vendor\workerman\workerman\Worker.php(2367): GatewayWorker\BusinessWorker->onWorkerStart()
+#6 G:\gitee\Anonymous-Chat-Room\vendor\workerman\gateway-worker\src\BusinessWorker.php(197): Workerman\Worker->run()
+#7 G:\gitee\Anonymous-Chat-Room\vendor\workerman\workerman\Worker.php(1353): GatewayWorker\BusinessWorker->run()
+#8 G:\gitee\Anonymous-Chat-Room\vendor\workerman\workerman\Worker.php(1296): Workerman\Worker::forkWorkersForWindows()
+#9 G:\gitee\Anonymous-Chat-Room\vendor\workerman\workerman\Worker.php(509): Workerman\Worker::forkWorkers()
+#10 G:\gitee\Anonymous-Chat-Room\Applications\chat\start_businessworker.php(35): Workerman\Worker::runAll()
+#11 {main}
+2021-03-18 15:22:59 pid:1 Worker process terminated
+2021-03-18 15:23:02 pid:1 PDOException: SQLSTATE[HY000] [2002] 由于目标计算机积极拒绝，无法连接。
+ in G:\gitee\Anonymous-Chat-Room\Applications\chat\Connection.php:1711
+Stack trace:
+#0 G:\gitee\Anonymous-Chat-Room\Applications\chat\Connection.php(1711): PDO->__construct()
+#1 G:\gitee\Anonymous-Chat-Room\Applications\chat\Connection.php(1698): Workerman\MySQL\Connection->connect()
+#2 G:\gitee\Anonymous-Chat-Room\Applications\chat\Events.php(47): Workerman\MySQL\Connection->__construct()
+#3 [internal function]: Events::onWorkerStart()
+#4 G:\gitee\Anonymous-Chat-Room\vendor\workerman\gateway-worker\src\BusinessWorker.php(223): call_user_func()
+#5 G:\gitee\Anonymous-Chat-Room\vendor\workerman\workerman\Worker.php(2367): GatewayWorker\BusinessWorker->onWorkerStart()
+#6 G:\gitee\Anonymous-Chat-Room\vendor\workerman\gateway-worker\src\BusinessWorker.php(197): Workerman\Worker->run()
+#7 G:\gitee\Anonymous-Chat-Room\vendor\workerman\workerman\Worker.php(1353): GatewayWorker\BusinessWorker->run()
+#8 G:\gitee\Anonymous-Chat-Room\vendor\workerman\workerman\Worker.php(1296): Workerman\Worker::forkWorkersForWindows()
+#9 G:\gitee\Anonymous-Chat-Room\vendor\workerman\workerman\Worker.php(509): Workerman\Worker::forkWorkers()
+#10 G:\gitee\Anonymous-Chat-Room\Applications\chat\start_businessworker.php(35): Workerman\Worker::runAll()
+#11 {main}
+2021-03-18 15:23:03 pid:1 Worker process terminated
+2021-03-18 15:23:06 pid:1 Register auth timeout (127.0.0.1). See http://doc2.workerman.net/register-auth-timeout.html
+2021-03-18 15:23:06 pid:1 PDOException: SQLSTATE[HY000] [2002] 由于目标计算机积极拒绝，无法连接。
+ in G:\gitee\Anonymous-Chat-Room\Applications\chat\Connection.php:1711
+Stack trace:
+#0 G:\gitee\Anonymous-Chat-Room\Applications\chat\Connection.php(1711): PDO->__construct()
+#1 G:\gitee\Anonymous-Chat-Room\Applications\chat\Connection.php(1698): Workerman\MySQL\Connection->connect()
+#2 G:\gitee\Anonymous-Chat-Room\Applications\chat\Events.php(47): Workerman\MySQL\Connection->__construct()
+#3 [internal function]: Events::onWorkerStart()
+#4 G:\gitee\Anonymous-Chat-Room\vendor\workerman\gateway-worker\src\BusinessWorker.php(223): call_user_func()
+#5 G:\gitee\Anonymous-Chat-Room\vendor\workerman\workerman\Worker.php(2367): GatewayWorker\BusinessWorker->onWorkerStart()
+#6 G:\gitee\Anonymous-Chat-Room\vendor\workerman\gateway-worker\src\BusinessWorker.php(197): Workerman\Worker->run()
+#7 G:\gitee\Anonymous-Chat-Room\vendor\workerman\workerman\Worker.php(1353): GatewayWorker\BusinessWorker->run()
+#8 G:\gitee\Anonymous-Chat-Room\vendor\workerman\workerman\Worker.php(1296): Workerman\Worker::forkWorkersForWindows()
+#9 G:\gitee\Anonymous-Chat-Room\vendor\workerman\workerman\Worker.php(509): Workerman\Worker::forkWorkers()
+#10 G:\gitee\Anonymous-Chat-Room\Applications\chat\start_businessworker.php(35): Workerman\Worker::runAll()
+#11 {main}

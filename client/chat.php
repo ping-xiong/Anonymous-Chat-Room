@@ -9,32 +9,23 @@
         $room_id = $db->test_input($_GET['room']);
 
         if (preg_match("/[\w.]+/", $room_id, $matches)){
-
-            $sql = "SELECT * FROM `room` WHERE `room_id` = '{$matches[0]}'";
-            $result = mysqli_query($db->link, $sql);
-            $room = mysqli_fetch_assoc($result);
+            $sql = $db->link->prepare("SELECT * FROM `room` WHERE `room_id` = ?");
+            $sql->bind_param('s', $matches[0]);
+            $sql->execute();
+            $room = $sql->get_result()->fetch_assoc();
             if (!empty($room)){
-
                 // 获取聊天记录
-                $sql = "SELECT * FROM `chat` WHERE `room_id` = '" . $matches[0] . "'";
-
-                $result = mysqli_query($db->link, $sql);
-                $chats = $result->fetch_all(1);
-
-
-
+                $sql = $db->link->prepare("SELECT * FROM `chat` WHERE `room_id` = ?");
+                $sql->bind_param('s', $matches[0]);
+                $sql->execute();
+                $chats = $sql->get_result()->fetch_all(1);
             }else{
-
                 die("房间不存在");
-
             }
         }
-
-
     }else{
         die("参数缺失");
     }
-
 ?>
 
 
