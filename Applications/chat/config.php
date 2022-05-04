@@ -31,7 +31,7 @@ class config
         'show_matching' => true,
 
         // 是否开启敏感文本过滤，去除脏话，敏感词，插件地址：https://github.com/ilovehuahua/php_keyword_shielding
-        'fitter_words' => true
+        'fitter_words' => false
     ];
 
     /**
