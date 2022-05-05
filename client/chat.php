@@ -83,6 +83,7 @@
         <span class="time"><?php echo $room['time'] ?></span>
 
         <?php
+            $chats = array_reverse($chats);
             foreach ($chats as $chat){
 
 

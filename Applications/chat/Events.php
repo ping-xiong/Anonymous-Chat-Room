@@ -88,6 +88,8 @@ class Events
                     $boy = array_shift($boy_waiting);
                     if ($girl != null && $boy != null){
                         $room_id = uniqid('', true);
+                        $room_id = md5($room_id);
+                        $room_id = substr($room_id, -6);
                         // 操作他们的session， 添加房间号
                         Gateway::updateSession($girl, array('room'=>$room_id));
                         Gateway::updateSession($boy, array('room'=>$room_id));
